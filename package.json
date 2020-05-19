@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "gatsby": "^2.21.22",
+    "gatsby-plugin-ts": "^2.7.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "typescript": "^3.9.2"
   },
   "devDependencies": {
     "prettier": "2.0.5"
