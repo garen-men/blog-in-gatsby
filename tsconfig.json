@@ -71,7 +71,7 @@
     "jsx": "preserve", /* <-- required! */
     "moduleResolution": "node", /* <-- required! */
     /* for mixed ts/js codebase */
-    "allowJS": true,
+    "allowJs": true,
     "outDir": "./build", /* this won't be used by ts-loader */
   }
 }
