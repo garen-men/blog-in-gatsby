@@ -14,10 +14,20 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.6",
+    "@mdx-js/react": "^1.6.6",
+    "@types/react-helmet": "^6.0.0",
     "gatsby": "^2.21.22",
+    "gatsby-plugin-catch-links": "^2.3.3",
+    "gatsby-plugin-mdx": "^1.2.19",
+    "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-ts": "^2.7.1",
+    "gatsby-source-filesystem": "^2.3.8",
+    "gatsby-theme-blog": "^1.6.51",
+    "gatsby-transformer-remark": "^2.8.13",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0",
     "typescript": "^3.9.2"
   },
   "devDependencies": {

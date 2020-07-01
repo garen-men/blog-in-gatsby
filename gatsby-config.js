@@ -23,6 +23,45 @@ module.exports = {
         alwaysCheck: false,
       }
     },
-    // `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
+      }
+    },
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {
+        /*
+        - basePath defaults to `/`
+        */
+        basePath: `/blog`,
+      },
+    },
   ],
+  siteMetadata: {
+    title: "My Blog",
+    author: "Amberley Romo",
+    description: "A collection of my thoughts and writings.",
+    siteUrl: "https://amberley.blog/",
+    social: [
+      {
+        name: "twitter",
+        url: "https://twitter.com/amber1ey",
+      },
+      {
+        name: "github",
+        url: "https://github.com/amberleyromo",
+      },
+    ],
+  },
 }
