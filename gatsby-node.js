@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log('%cnode.frontmatter.path: ', 'color: MidnightBlue; background: Aquamarine; font-size: 20px;', node.frontmatter.path);
 
     createPage({
-      path: "/product" + node.frontmatter.path,
+      path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {
         // additional data can be passed via context

@@ -30,11 +30,11 @@ tags: ["Dev"]
 
 # 字段聚焦，失焦状态的监听
 
-\```javascript
+```javascript
 
 ​	rowField.**select**('inAmount').**onStatePropChanged**('focused', (changed) => {    .......   })
 
-\```
+```
 
 注意：这个方法的实现，是依赖autoRun，所以，返回值是类似析构函数，需要在销毁前执行该函数，释放监听动作
 
@@ -42,7 +42,7 @@ tags: ["Dev"]
 
 全键盘的实现，可以简单理解成，单据公共维护了一个数组，用来存储，所有需要全键盘覆盖的UI组件，每个组件有一个Id，而这个ID代表一个field的path（也就是form里的一个字段名称），每个全键盘的ID内部，还可以由全键盘数组组成，每个全键盘组件，都必须遵循一定的接口规范，即可被聚焦，可被失焦等
 
-\```javascript
+```javascript
 
 ​	export interface **IQwertItem** {
 
@@ -58,15 +58,15 @@ tags: ["Dev"]
 
 }
 
-\```
+```
 
 在单据应用中，需要将自己定义的表尾组件，加入到全键盘的大数组中，配置十分简单：
 
-\```javascript
+```javascript
 
 ​	qwertIds: ["promoList", "totalExtraDiscount"],
 
-\```
+```
 
 只需在presenter的初始化initOptions中，配置表尾字段名称即可
 
@@ -74,13 +74,13 @@ tags: ["Dev"]
 
 旧版单据公共
 
-\```javascript
+```javascript
 
 ​	const XXXField = presenter.controllers.formController.form.**select**("XXX");
 
 ​	XXXField.disabled =  true;
 
-\```
+```
 
 新版单据公共---具体可参照src/modules/order/sales/goods-issue/ui-state/goodsIssue-validator.ts 这个文件中useable属性的配置
 
@@ -88,11 +88,11 @@ tags: ["Dev"]
 
 旧版单据公共
 
-\```javascript
+```javascript
 
 ​	presenter.api.**setColumnVisible**(presenter["bodyFieldName"], getFieldNameInForm(STATIC_FIELD_NAME.inventoryLotNo), true);
 
-\```
+```
 
 新版单据公共，具体可参照src/modules/order/sales/goods-issue/ui-state/goodsIssue-validator.ts 这个文件中visible属性的配置
 
@@ -104,7 +104,7 @@ tags: ["Dev"]
 
 旧版单据公共
 
-\```javascript
+```javascript
 
 ​	const  XXFieldValidator = (params: { field, **form** }) => {
 
@@ -122,7 +122,7 @@ tags: ["Dev"]
 
 ​	rowField.**select**("XXX").**addValidator**(XXFieldValidator);
 
-\```
+```
 
 新版单据公共:需要在BizService层配置，
 
@@ -280,7 +280,7 @@ closeJumpVoucherForEdit // 关闭当前页签并跳转到单据编辑态页签
 
 如果与字段变化无关，则推荐使用派发命令：
 
-\```javascript
+```javascript
 
 ​	this.presenter.bizController.**dispatch**({
 
@@ -294,7 +294,7 @@ closeJumpVoucherForEdit // 关闭当前页签并跳转到单据编辑态页签
 
 ​    })
 
-\```
+```
 
 # 通用的刷新页面方法
 
