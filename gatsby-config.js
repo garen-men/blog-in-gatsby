@@ -7,7 +7,6 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    // `gatsby-plugin-ts`,
     {
       resolve: `gatsby-plugin-ts`,
       options: {
@@ -20,7 +19,7 @@ module.exports = {
         fileName: `types/graphql-types.ts`,
         codegen: true,
         codegenDelay: 250,
-        alwaysCheck: false,
+        // typeCheck: false,
       }
     },
     {
@@ -44,24 +43,15 @@ module.exports = {
         /*
         - basePath defaults to `/`
         */
-        basePath: `/blog`,
+        // basePath: `/blog/`,
       },
     },
   ],
   siteMetadata: {
-    title: "My Blog",
-    author: "Amberley Romo",
+    title: "My Blog For Team Building",
+    author: "mguy",
     description: "A collection of my thoughts and writings.",
+    social: [{name:"github",url:"https://github.com"}],
     siteUrl: "https://amberley.blog/",
-    social: [
-      {
-        name: "twitter",
-        url: "https://twitter.com/amber1ey",
-      },
-      {
-        name: "github",
-        url: "https://github.com/amberleyromo",
-      },
-    ],
   },
 }

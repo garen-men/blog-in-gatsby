@@ -81,7 +81,7 @@ function SEO({ description, lang, meta, title, tags }: any) {
 SEO.defaultProps = {
     lang: `zh-CN`,
     meta: [],
-    description: `ca的技术博客`,
+    description: `mguy的技术博客`,
 }
 
 SEO.propTypes = {

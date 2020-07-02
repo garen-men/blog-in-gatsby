@@ -1,7 +1,8 @@
 ---
-path: "/hello-world"
-date: "2017-07-12T17:12:33.962Z"
-title: "My First Gatsby Post -- Refer参照使用"
+path: "/blog/Refer"
+date: "2017-07-12"
+title: "Refer参照使用"
+tags: ["Use"]
 ---
 
 ## Refer参照使用 ##

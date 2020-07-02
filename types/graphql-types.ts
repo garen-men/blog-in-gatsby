@@ -3953,12 +3953,10 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
-  pathPrefix?: Maybe<Scalars['String']>;
   frontmatter?: Maybe<SitePageContextFrontmatter>;
 };
 
 export type SitePageContextFilterInput = {
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<SitePageContextFrontmatterFilterInput>;
 };
 
@@ -4075,7 +4073,6 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
-  | 'context___pathPrefix'
   | 'context___frontmatter___path'
   | 'context___frontmatter___date'
   | 'context___frontmatter___title'
@@ -4126,13 +4123,11 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___codegen'
   | 'pluginCreator___pluginOptions___codegenDelay'
-  | 'pluginCreator___pluginOptions___alwaysCheck'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___extensions'
   | 'pluginCreator___pluginOptions___gatsbyRemarkPlugins'
   | 'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve'
-  | 'pluginCreator___pluginOptions___basePath'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -4326,7 +4321,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fileName'
   | 'pluginOptions___codegen'
   | 'pluginOptions___codegenDelay'
-  | 'pluginOptions___alwaysCheck'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
   | 'pluginOptions___extensions'
@@ -4344,7 +4338,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___gatsbyRemarkPlugins___options___loading'
   | 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImageOnAlpha'
   | 'pluginOptions___gatsbyRemarkPlugins___options___disableBgImage'
-  | 'pluginOptions___basePath'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -4466,12 +4459,10 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>;
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
-  alwaysCheck?: Maybe<Scalars['Boolean']>;
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   extensions?: Maybe<Array<Maybe<Scalars['String']>>>;
   gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>;
-  basePath?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -4481,12 +4472,10 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>;
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
-  alwaysCheck?: Maybe<BooleanQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   extensions?: Maybe<StringQueryOperatorInput>;
   gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>;
-  basePath?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -4608,12 +4597,23 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type BlogPostByPathQueryVariables = {
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = { allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>> }
+      ) }> }
+  ) };
+
+export type Unnamed_3_QueryVariables = {
   path: Scalars['String'];
 };
 
 
-export type BlogPostByPathQuery = { markdownRemark?: Maybe<(
+export type Unnamed_3_Query = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'path' | 'title'>> }
   )> };

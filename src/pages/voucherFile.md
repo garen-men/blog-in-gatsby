@@ -1,8 +1,8 @@
 ---
 path: "/voucherFile"
-date: "2017-07-14T03:49:16.408Z"
-title: "Hello World"
-tags: ["first"]
+date: "2017-07-14"
+title: "单据公共开发"
+tags: ["Dev"]
 ---
 旧版单据公共下开发
 
