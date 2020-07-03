@@ -1,5 +1,5 @@
 ---
-path: "/blog/Refer"
+path: "/refer"
 date: "2017-07-12"
 title: "Refer参照使用"
 tags: ["Use"]
@@ -171,14 +171,14 @@ tags: ["Use"]
 以StockInDetail引用Prodcut为例
 
 ### 打开bo工具，找到StockInDetail，可以看到有productId字段，这里UI类型为refer，参照是 `Product.refer`,这里的`Product.refer`就是已经配置好的参照
-![参照1](../img/refer1.png)
+![参照1](../assets/refer1.png)
 > 这里的参照可以下拉选择不同的参照，对应下面的参照列表
 
 ### 找到Product，打开Refers,可以看到已经有很多参照类型
-![参照2](../img/refer2.png)
+![参照2](../assets/refer2.png)
 
 ### 这里可以根据自己的需求，配置不同的参照引用，目前没有提供界面上的编辑功能，可以通过直接修改json来修改，文件位置如图
-![参照3](../img/refer3.png)
+![参照3](../assets/refer3.png)
 
 ### 配置项
 ```json

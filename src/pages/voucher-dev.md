@@ -1,5 +1,5 @@
 ---
-path: "/voucherFile"
+path: "/voucher-dev"
 date: "2017-07-14"
 title: "单据公共开发"
 tags: ["Dev"]
@@ -302,3 +302,4 @@ closeJumpVoucherForEdit // 关闭当前页签并跳转到单据编辑态页签
 
 refreshInitData//刷新整单数据
 
+![参照3](../../static/img/refer3.png)

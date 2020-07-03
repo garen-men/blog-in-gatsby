@@ -28,7 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log('%cnode.frontmatter.path: ', 'color: MidnightBlue; background: Aquamarine; font-size: 20px;', node.frontmatter.path);
+    console.log('node.frontmatter.path1111111111111: ', node.frontmatter.path);
 
     createPage({
       path: node.frontmatter.path,
@@ -47,6 +47,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     // });
   })
 }
+
+
+
+
+
 // exports.createPages = ({ actions, graphql }) => {
 //   const { createPage } = actions;
 

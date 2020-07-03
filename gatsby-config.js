@@ -22,30 +22,46 @@ module.exports = {
         // typeCheck: false,
       }
     },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
-      }
-    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //     name: 'pages',
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     {
-      resolve: `gatsby-theme-blog`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        /*
-        - basePath defaults to `/`
-        */
-        // basePath: `/blog/`,
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
       },
     },
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+            },
+          },
+          `gatsby-remark-prismjs`,
+        ] // just in case those previously mentioned remark plugins sound cool :)
+      }
+    },
+
   ],
   siteMetadata: {
     title: "My Blog For Team Building",

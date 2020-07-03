@@ -27,8 +27,7 @@ interface IBlogIndexProps {
 // }
 import React from "react"
 import { graphql } from "gatsby"
-import { css } from "@emotion/core"
-import { BlogPost, MarkdownRemark, MarkdownRemarkConnection } from "../../types/graphql-types"
+import { MarkdownRemark, MarkdownRemarkConnection } from "../../types/graphql-types"
 // import { rhythm } from "../utils/typography"
 // import Layout from "../components/layout"
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
@@ -36,27 +35,21 @@ const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
     return (
         <div>
             <div>
-                <h1
-                    css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
+                <h1 style={{ display: "inline-block",borderBottom: "1px solid"}}
                 >
                     Amazing Pandas Eating Things
         </h1>
                 <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
                 {data.allMarkdownRemark.edges.map(({ node }: { node: MarkdownRemark}) => (
                     <div key={node.id}>
-                        <h3
-                            css={css`
-                margin-bottom: 5};
-              `}
+                        <h3 style={{
+                marginBottom: 5}}
                         >
                             {node.frontmatter && node.frontmatter.title}{" "}
                             <span
-                                css={css`
-                  color: #bbb;
-                `}
+                                style={{
+                                    color: "#bbb"
+                                }}
                             >
                                 — {node.frontmatter && node.frontmatter.date}
                             </span>

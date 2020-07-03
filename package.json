@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "gatsby-mguy",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
@@ -21,10 +21,13 @@
     "gatsby-plugin-catch-links": "^2.3.3",
     "gatsby-plugin-mdx": "^1.2.19",
     "gatsby-plugin-react-helmet": "^3.3.2",
+    "gatsby-plugin-sharp": "^2.6.17",
     "gatsby-plugin-ts": "^2.7.1",
+    "gatsby-remark-images": "^3.3.17",
+    "gatsby-remark-prismjs": "^3.5.9",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-theme-blog": "^1.6.51",
     "gatsby-transformer-remark": "^2.8.13",
+    "prismjs": "^1.20.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
@@ -32,10 +35,6 @@
   },
   "devDependencies": {
     "prettier": "2.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
