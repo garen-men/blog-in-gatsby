@@ -26,7 +26,7 @@ interface IBlogIndexProps {
 //     return <div>Hello world!</div>
 // }
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MarkdownRemark, MarkdownRemarkConnection } from "../../types/graphql-types"
 // import { rhythm } from "../utils/typography"
 // import Layout from "../components/layout"
@@ -37,15 +37,16 @@ const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
             <div>
                 <h1 style={{ display: "inline-block",borderBottom: "1px solid"}}
                 >
-                    Amazing Pandas Eating Things
+                    Let's Do Some Amazing Things
         </h1>
                 <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+
                 {data.allMarkdownRemark.edges.map(({ node }: { node: MarkdownRemark}) => (
                     <div key={node.id}>
                         <h3 style={{
                 marginBottom: 5}}
                         >
-                            {node.frontmatter && node.frontmatter.title}{" "}
+                            <Link to={node.frontmatter && node.frontmatter.path || ''}>{node.frontmatter && node.frontmatter.title}{" "}</Link>
                             <span
                                 style={{
                                     color: "#bbb"
@@ -72,6 +73,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            path
           }
           excerpt
         }

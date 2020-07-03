@@ -1,10 +1,9 @@
 ---
-path: "/voucher-dev"
-date: "2017-07-14"
+path: "/voucher"
+date: "2020-07-02"
 title: "单据公共开发"
 tags: ["Dev"]
 ---
-旧版单据公共下开发
 
 # 现在有哪些可共用的UI组件
 
@@ -301,5 +300,3 @@ closeJumpVoucherForEdit // 关闭当前页签并跳转到单据编辑态页签
 ###### ----------------voucherPresenter----------------
 
 refreshInitData//刷新整单数据
-
-![参照3](../../static/img/refer3.png)

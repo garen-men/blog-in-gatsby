@@ -1,11 +1,9 @@
 ---
 path: "/refer"
-date: "2017-07-12"
+date: "2020-07-01"
 title: "Refer参照使用"
 tags: ["Use"]
 ---
-
-## Refer参照使用 ##
 
 ##### 什么是参照？ #####
 参照就是： 当前field的值，参照另外一个实体的数据列表，从列表中选中一个符合要求的数据，作为当前输入field的值。
@@ -34,38 +32,38 @@ tags: ["Use"]
 ##### 参照如何使用？ #####
 
 1. 通过DataField
-```javascript
-<DataField
-	field={field}
-	{...props}
-/>
+``` javascript
+    <DataField
+	    field={field}
+	    {...props}
+    />
 ```
 
 2. 直接使用 ReferComponet
-```javascript
-<ReferComponent
-    refer={this.refer} 
-    entity={this.entity}
-    enums={this.enums}
-    tabDialogManager={tabDialogManager}
-    isSummaryMode={field.extra.isSummaryMode}
-    value={value}
-    focus={field.focused}
-    placeholder={placeholder || field.placeholder}
-    disabled={disabled || field.disabled}
-    required={field.extra.required}
-    onFocus={this.onFocus}
-    onBlur={this.onBlur}
-    onChange={this.onChange}
-    onCreate={onCreate}
-    criteria={criteria}
-    queryName={queryName}
-    allowAppend={allowAppend}
-    treeRootNodeLabel={treeRootNodeLabel}
-    queryFields={queryFields}
-    includeDisabledItems={includeDisabledItems}
-    {...props}
-/>
+``` javascript
+    <ReferComponent
+        refer={this.refer} 
+        entity={this.entity}
+        enums={this.enums}
+        tabDialogManager={tabDialogManager}
+        isSummaryMode={field.extra.isSummaryMode}
+        value={value}
+        focus={field.focused}
+        placeholder={placeholder || field.placeholder}
+        disabled={disabled || field.disabled}
+        required={field.extra.required}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        onChange={this.onChange}
+        onCreate={onCreate}
+        criteria={criteria}
+        queryName={queryName}
+        allowAppend={allowAppend}
+        treeRootNodeLabel={treeRootNodeLabel}
+        queryFields={queryFields}
+        includeDisabledItems={includeDisabledItems}
+        {...props}
+    />
 ```
 
 3. Props定义
@@ -89,74 +87,74 @@ tags: ["Use"]
 - **简单下拉参照** `<ReferSimpleSelector>`
 最普通的参照，类似select下拉列表的效果
 ```javascript
-<ReferSimpleSelector
-    refer={refer}
-    defaultDataCacheDisabled={true} //是否禁用缓存，禁用时，每次都需要数据请求
-    {...otherProps}
-/>
+    <ReferSimpleSelector
+        refer={refer}
+        defaultDataCacheDisabled={true} //是否禁用缓存，禁用时，每次都需要数据请求
+        {...otherProps}
+    />
 ```
 
 - **枚举参照** `<ReferEnumComponent>`
 选项来源元数据的枚举类型的实体，其选项为可枚举的值
 ```javascript
-<ReferEnumComponent
-    enums={enums}
-    includeDisabledItems={true} //是否包含 disabled 的枚举项，默认为 false
-    pick={[v1, v2, v3]} //选择某些枚举值
-    omit={[v3, v4, v5]} //过滤掉某些枚举值
-    {...otherProps}
-/>
+    <ReferEnumComponent
+        enums={enums}
+        includeDisabledItems={true} //是否包含 disabled 的枚举项，默认为 false
+        pick={[v1, v2, v3]} //选择某些枚举值
+        omit={[v3, v4, v5]} //过滤掉某些枚举值
+        {...otherProps}
+    />
 ```
 
 - **树形参照** `<ReferTreeSelector>`
 以树的形式呈现，关联一个分类BO，数据一次性获取，搜索使用已加载数据进行搜索。
 ```javascript
-<ReferTreeSelector
-    refer={refer}
-    addRootItem={true} //是否添加一个根节点
-    isSummaryMode={true} //是否汇总模式：如果子节点全部选中，则返回父节点，非汇总模式：返回底层根节点
-    onlyChildNodesInSummaryMode={true} //非汇总模式下，是否只选择子节点
-    onAdvanceOpen={()=> {}} //如果有配置新增，在新增弹窗时调用
-    onAdvanceClose={()=> {}} //如果有配置新增，在新增完成后调用
-    {...otherProps}
-/>
+    <ReferTreeSelector
+        refer={refer}
+        addRootItem={true} //是否添加一个根节点
+        isSummaryMode={true} //是否汇总模式：如果子节点全部选中，则返回父节点，非汇总模式：返回底层根节点
+        onlyChildNodesInSummaryMode={true} //非汇总模式下，是否只选择子节点
+        onAdvanceOpen={()=> {}} //如果有配置新增，在新增弹窗时调用
+        onAdvanceClose={()=> {}} //如果有配置新增，在新增完成后调用
+        {...otherProps}
+    />
 ```
 
 - **Grid列表参照** `<ReferGridSelector>`
 下拉内容以Grid表格形式呈现，通过接口获取数据
 ```javascript
-<ReferGridSelector
-    refer={refer as ReferGrid}
-    cellFormatter={()=> {}}  //对Grid单元格展示的自定义格式化方法
-    onAdvanceOpen={()=> {}}  //当高级弹出参照打开时回调
-    onAdvanceClose={()=> {}}  //当高级弹出参照关闭时回调
-    onReady={()=> {}}   //当参照首次渲染完成后执行，回传给外面一个`openAdvance`打开高级参照的API
-    onAutoPick={()=> {}}  //
-    {...otherProps}
-/>
+    <ReferGridSelector
+        refer={refer as ReferGrid}
+        cellFormatter={()=> {}}  //对Grid单元格展示的自定义格式化方法
+        onAdvanceOpen={()=> {}}  //当高级弹出参照打开时回调
+        onAdvanceClose={()=> {}}  //当高级弹出参照关闭时回调
+        onReady={()=> {}}   //当参照首次渲染完成后执行，回传给外面一个`openAdvance`打开高级参照的API
+        onAutoPick={()=> {}}  //
+        {...otherProps}
+    />
 ```
 
 - **高级参照**
 在Grid列表参照的基础上，增加了弹出式参照，弹出式参照又分为 "有分类的`ReferAdvanceTreeGrid`" 和 "无分类的`ReferAdvanceGrid`" 两种。
 根据Grid列表参照的私有属性`advanceOpen`判断是否开启高级弹出模式，这类参照都具有高级弹出模式。
 ```javascript
-<ReferAdvancePopover
-    refer={refer}
-    open={true} // 是否打开弹窗
-    multi={true} // 是否多选
-    selectRows={[...]} // 已经选中的行
-    title={"标题"} // 弹窗的标题
-    criteria={criteria} // 数据GQL查询语句片段，用于拼入查询语句中
-    treeRootNodeLabel={"分类"}  // *带分类的高级弹出时，是否要显示一个根节点的label
-    treeCriteria={treeCriteria} // *带分类的高级弹出时, 用于拼入分类树的GQL查询语句中
-    filter={()=> {}}  // 返回一个筛选GQL查询片段，用于拼入查询语句中
-    cellFormatter={()=> {}} // 对Grid单元格展示的自定义格式化方法
-    allowAppend={true} // 是否允许参照有新增功能，为true渲染一个新增按钮
-    searchKeyword={"keyword"} // 从输入框携带过去的搜索关键字
-    onSelect={()=> {}} // 完成选择，确定后的回调，用于将选中结果带回
-    onClose={()=> {}} // 弹窗关闭的回调
-    onCreate={()=> {}} // 如果参照有新增功能，新增按钮点击执行的回调，用于新增UI的处理
-/>
+    <ReferAdvancePopover
+        refer={refer}
+        open={true} // 是否打开弹窗
+        multi={true} // 是否多选
+        selectRows={[...]} // 已经选中的行
+        title={"标题"} // 弹窗的标题
+        criteria={criteria} // 数据GQL查询语句片段，用于拼入查询语句中
+        treeRootNodeLabel={"分类"}  // *带分类的高级弹出时，是否要显示一个根节点的label
+        treeCriteria={treeCriteria} // *带分类的高级弹出时, 用于拼入分类树的GQL查询语句中
+        filter={()=> {}}  // 返回一个筛选GQL查询片段，用于拼入查询语句中
+        cellFormatter={()=> {}} // 对Grid单元格展示的自定义格式化方法
+        allowAppend={true} // 是否允许参照有新增功能，为true渲染一个新增按钮
+        searchKeyword={"keyword"} // 从输入框携带过去的搜索关键字
+        onSelect={()=> {}} // 完成选择，确定后的回调，用于将选中结果带回
+        onClose={()=> {}} // 弹窗关闭的回调
+        onCreate={()=> {}} // 如果参照有新增功能，新增按钮点击执行的回调，用于新增UI的处理
+    />
 ```
 
 - **特殊参照**
