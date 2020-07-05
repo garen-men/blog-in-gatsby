@@ -1,8 +1,4 @@
 
-// export default () => <div>Hello world!</div>
-
-// import { graphql } from "gatsby";
-
 // export const pageQuery = graphql`
 //     query {
 //         query BlogIndex {
@@ -14,38 +10,28 @@
 //         }
 //     }
 // `
-
-// // import { BlogIndexQuery } from '../graphqlTypes'
-
 interface IBlogIndexProps {
     data: { allMarkdownRemark: MarkdownRemarkConnection};
     // location: Location;
 }
 
-// const BlogIndex: React.FC<IBlogIndexProps> = ({ data, location }) => {
-//     return <div>Hello world!</div>
-// }
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MarkdownRemark, MarkdownRemarkConnection } from "../../types/graphql-types"
-// import { rhythm } from "../utils/typography"
-// import Layout from "../components/layout"
+
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
     console.log(data)
     return (
         <div>
             <div>
-                <h1 style={{ display: "inline-block",borderBottom: "1px solid"}}
-                >
+                <h1 style={{ display: "inline-block",borderBottom: "1px solid"}}>
                     Let's Do Some Amazing Things
-        </h1>
+                </h1>
                 <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
 
                 {data.allMarkdownRemark.edges.map(({ node }: { node: MarkdownRemark}) => (
                     <div key={node.id}>
-                        <h3 style={{
-                marginBottom: 5}}
-                        >
+                        <h3 style={{marginBottom: 5}}>
                             <Link to={node.frontmatter && node.frontmatter.path || ''}>{node.frontmatter && node.frontmatter.title}{" "}</Link>
                             <span
                                 style={{
@@ -64,22 +50,22 @@ const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
+    query {
     allMarkdownRemark {
-      totalCount
-      edges {
+        totalCount
+        edges {
         node {
-          id
-          frontmatter {
+            id
+            frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
             path
-          }
-          excerpt
+            }
+            excerpt
         }
-      }
+        }
     }
-  }
+    }
 `
 
 export default BlogIndex
