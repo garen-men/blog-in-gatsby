@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-  /* Your site config here */
   plugins: [
     {
       resolve: `gatsby-plugin-ts`,
@@ -19,18 +18,10 @@ module.exports = {
         fileName: `types/graphql-types.ts`,
         codegen: true,
         codegenDelay: 250,
-        // typeCheck: false,
       }
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/pages`,
-    //     name: 'pages',
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,27 +52,10 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
-              inlineCodeMarker: null,
               showLineNumbers: true,
-              noInlineHighlight: false,
-              languageExtensions: [
-                {
-                  language: "superscript",
-                  extend: "javascript",
-                  definition: {
-                    superscript_types: /(SuperType)/,
-                  },
-                  insertBefore: {
-                    function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
-              ],
             },
           },
-          
-        ] // just in case those previously mentioned remark plugins sound cool :)
+        ]
       }
     },
 
@@ -90,7 +64,7 @@ module.exports = {
     title: "My Blog For Team Building",
     author: "mguy",
     description: "A collection of my thoughts and writings.",
-    social: [{name:"github",url:"https://github.com"}],
-    siteUrl: "https://amberley.blog/",
+    social: [{ name: "github", url:"https://github.com/menglinlun/gatsby"}],
+    siteUrl: "https://gatsby-mguy-6213768438.gtsb.io",
   },
 }

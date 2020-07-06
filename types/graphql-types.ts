@@ -1824,10 +1824,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___linkImagesToOriginal'
   | 'pluginCreator___pluginOptions___classPrefix'
   | 'pluginCreator___pluginOptions___showLineNumbers'
-  | 'pluginCreator___pluginOptions___noInlineHighlight'
-  | 'pluginCreator___pluginOptions___languageExtensions'
-  | 'pluginCreator___pluginOptions___languageExtensions___language'
-  | 'pluginCreator___pluginOptions___languageExtensions___extend'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -2024,8 +2020,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___plugins___pluginOptions___classPrefix'
   | 'pluginOptions___plugins___pluginOptions___showLineNumbers'
-  | 'pluginOptions___plugins___pluginOptions___noInlineHighlight'
-  | 'pluginOptions___plugins___pluginOptions___languageExtensions'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___tsLoader___logLevel'
@@ -2039,10 +2033,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___linkImagesToOriginal'
   | 'pluginOptions___classPrefix'
   | 'pluginOptions___showLineNumbers'
-  | 'pluginOptions___noInlineHighlight'
-  | 'pluginOptions___languageExtensions'
-  | 'pluginOptions___languageExtensions___language'
-  | 'pluginOptions___languageExtensions___extend'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -2171,8 +2161,6 @@ export type SitePluginPluginOptions = {
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   classPrefix?: Maybe<Scalars['String']>;
   showLineNumbers?: Maybe<Scalars['Boolean']>;
-  noInlineHighlight?: Maybe<Scalars['Boolean']>;
-  languageExtensions?: Maybe<Array<Maybe<SitePluginPluginOptionsLanguageExtensions>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2189,8 +2177,6 @@ export type SitePluginPluginOptionsFilterInput = {
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
-  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>;
-  languageExtensions?: Maybe<SitePluginPluginOptionsLanguageExtensionsFilterListInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -2200,20 +2186,6 @@ export type SitePluginPluginOptionsForkTsCheckerPlugin = {
 
 export type SitePluginPluginOptionsForkTsCheckerPluginFilterInput = {
   eslint?: Maybe<BooleanQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsLanguageExtensions = {
-  language?: Maybe<Scalars['String']>;
-  extend?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsLanguageExtensionsFilterInput = {
-  language?: Maybe<StringQueryOperatorInput>;
-  extend?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsLanguageExtensionsFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsLanguageExtensionsFilterInput>;
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -2245,8 +2217,6 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
   classPrefix?: Maybe<Scalars['String']>;
   showLineNumbers?: Maybe<Scalars['Boolean']>;
-  noInlineHighlight?: Maybe<Scalars['Boolean']>;
-  languageExtensions?: Maybe<Array<Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensions>>>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -2254,22 +2224,6 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
-  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>;
-  languageExtensions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterListInput>;
-};
-
-export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensions = {
-  language?: Maybe<Scalars['String']>;
-  extend?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterInput = {
-  language?: Maybe<StringQueryOperatorInput>;
-  extend?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsLanguageExtensionsFilterInput>;
 };
 
 export type SitePluginPluginOptionsTsLoader = {

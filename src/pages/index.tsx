@@ -20,11 +20,10 @@ import { graphql, Link } from "gatsby"
 import { MarkdownRemark, MarkdownRemarkConnection } from "../../types/graphql-types"
 
 const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
-    console.log(data)
     return (
-        <div>
-            <div>
-                <h1 style={{ display: "inline-block",borderBottom: "1px solid"}}>
+        <div style={{ display: "flex", justifyContent: "center",alignItems: "center"}}>
+            <div style={{ maxWidth: 640}}>
+                <h1 style={{ display: "flex",justifyContent: "center"}}>
                     Let's Do Some Amazing Things
                 </h1>
                 <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
@@ -51,7 +50,7 @@ const BlogIndex: React.FC<IBlogIndexProps> = ({ data }) => {
 
 export const query = graphql`
     query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         totalCount
         edges {
         node {
